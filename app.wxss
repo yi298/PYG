@@ -1,0 +1,13 @@
+page,view,text,swiper,swiper-item,image,navigator,input,button{
+  box-sizing: border-box;
+}
+
+image{
+  width: 100%;
+}
+
+page{
+  /* 1、定义变量 */
+  --themeColor:#eb4450;
+  color: #999
+}
