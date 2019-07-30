@@ -1,7 +1,6 @@
 <!-- 首页 -->
 <!-- 搜索组件 -->
 <SearchInput></SearchInput>
-
 <!-- 轮播图 开始 -->
 <view class="index_swiper">
   <swiper indicator-dots autoplay circular>
@@ -13,12 +12,24 @@
   </swiper>
 </view>
 <!-- 轮播图 结束 -->
-
-<!-- 导航 开始-->
+<!-- 导航 开始 -->
 <view class="inde_catitems">
   <navigator wx:for="{{CatItemsList}}" wx:key="name">
     <image src="{{item.image_src}}" mode="widthFix" />
   </navigator>
-    
 </view>
 <!-- 导航结束 -->
+<!-- 楼层 开始 -->
+<view class="index_floor">
+  <view class="floor_item" wx:for="{{floorList}}" wx:key="name" wx:for-index="index" wx:for-item="item">
+    <view class="floor_title">
+      <image src="{{item.floor_title.image_src}}" mode="widthFix" />
+    </view>
+    <view class="floor_content">
+      <navigator wx:for="{{item.product_list}}" wx:for-index="index2" wx:for-item="item2" wx:key="name">
+        <image src="{{item2.image_src}}" mode="{{index2===0?'widthFix':'scaleToFill'}}" />
+      </navigator>
+    </view>
+  </view>
+</view>
+<!-- 楼层 结束 -->

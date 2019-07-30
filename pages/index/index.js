@@ -6,13 +6,16 @@ Page({
     // 轮播图数据
     swiperList: [],
     // 导航菜单数据
-    CatItemsList:[]
+    CatItemsList: [],
+    // 楼层数据
+    floorList:[]
   },
   
   // 生命周期
   onLoad() {
     this.getSwiperList();
-    this.getCatItemsList()
+    this.getCatItemsList();
+    this.getFloorList()
   },
 
   // 获取轮播图数据
@@ -31,6 +34,16 @@ Page({
       .then((result) => {
         this.setData({
           CatItemsList:result
+      })
+    })
+  },
+
+  // 获取楼层数据
+  getFloorList() {
+    request({ url: '/home/floordata' })
+      .then((result) => {
+        this.setData({
+          floorList:result
       })
     })
   }

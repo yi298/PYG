@@ -1,14 +1,36 @@
-.index_swiper{
-  swiper{
+.index_swiper {
+  swiper {
     height: 340rpx;
   }
-};
+}
 
 // 导航菜单样式
-.inde_catitems{
+.inde_catitems {
   display: flex;
-  navigator{
+  navigator {
     flex: 1;
-    padding: 25rpx
+    padding: 25rpx;
+  }
+}
+
+// 楼层
+.index_floor {
+  .floor_item {
+    padding: 0 10rpx;
+    .floor_content {
+      navigator {
+        width: 33.3%;
+        float: left;
+        // 后四个连接
+        &:nth-last-child(-n + 4) {
+          height: 750rpx/3 * 386/232/2;
+          padding-left:10rpx;
+          padding-bottom: 10rpx; 
+        }
+        image{
+          height: 100%;
+        }
+      }
+    }
   }
 }

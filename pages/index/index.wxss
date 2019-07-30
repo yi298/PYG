@@ -8,3 +8,18 @@
   flex: 1;
   padding: 25rpx;
 }
+.index_floor .floor_item {
+  padding: 0 10rpx;
+}
+.index_floor .floor_item .floor_content navigator {
+  width: 33.3%;
+  float: left;
+}
+.index_floor .floor_item .floor_content navigator:nth-last-child(-n + 4) {
+  height: 207.97413793rpx;
+  padding-left: 10rpx;
+  padding-bottom: 10rpx;
+}
+.index_floor .floor_item .floor_content navigator image {
+  height: 100%;
+}
