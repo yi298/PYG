@@ -1,2 +1,24 @@
-<!--pages/index/index.wxml-->
-<text>测试全局字体颜色</text>
+<!-- 首页 -->
+<!-- 搜索组件 -->
+<SearchInput></SearchInput>
+
+<!-- 轮播图 开始 -->
+<view class="index_swiper">
+  <swiper indicator-dots autoplay circular>
+    <swiper-item wx:for="{{swiperList}}" wx:key="goods_id">
+      <navigator>
+        <image src="{{item.image_src}}" mode="widthFix" />
+      </navigator>
+    </swiper-item>
+  </swiper>
+</view>
+<!-- 轮播图 结束 -->
+
+<!-- 导航 开始-->
+<view class="inde_catitems">
+  <navigator wx:for="{{CatItemsList}}" wx:key="name">
+    <image src="{{item.image_src}}" mode="widthFix" />
+  </navigator>
+    
+</view>
+<!-- 导航结束 -->

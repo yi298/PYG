@@ -1,1 +1,10 @@
-/* pages/index/index.wxss */
+.index_swiper swiper {
+  height: 340rpx;
+}
+.inde_catitems {
+  display: flex;
+}
+.inde_catitems navigator {
+  flex: 1;
+  padding: 25rpx;
+}
