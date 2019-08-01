@@ -1,1 +1,47 @@
-/* pages/category/index.wxss */
+.category {
+  height: calc(100vh - 90rpx);
+  display: flex;
+}
+.category .left {
+  flex: 1;
+}
+.category .left .left_menu {
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+}
+.category .left .active {
+  color: var(--themeColor);
+  border-left: 5rpx solid currentColor;
+}
+.category .right {
+  flex: 3;
+}
+.category .right .right_content .right_title {
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.category .right .right_content .right_title .delimiter {
+  color: #ccc;
+}
+.category .right .right_content .right_title .title_name {
+  color: black;
+  font-size: 30rpx;
+  padding: 0 10rpx;
+}
+.category .right .right_content .right_list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.category .right .right_content .right_list navigator {
+  width: 33.3%;
+  text-align: center;
+  font-size: 26rpx;
+}
+.category .right .right_content .right_list navigator image {
+  width: 50%;
+}

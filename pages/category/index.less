@@ -1,0 +1,52 @@
+.category{
+  height: ~"calc(100vh - 90rpx)";
+  display: flex;
+  .left{
+    flex: 1;
+    .left_menu{
+      height: 80rpx;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30rpx;
+    }
+    .active{
+      color: var(--themeColor);
+      border-left: 5rpx solid currentColor;
+    }
+  }
+  .right{
+    flex: 3;
+    .right_content{
+      .right_title{
+        height: 80rpx;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .delimiter{
+          color:#ccc;
+        }
+        .title_name{
+          color: black;
+          font-size: 30rpx;
+          padding: 0 10rpx;
+        }
+      }
+      .right_list{
+        display: flex;
+        flex-wrap: wrap;//换行
+        navigator{
+          width: 33.3%;
+          text-align: center;
+          font-size: 26rpx;
+          image{
+            width: 50%;
+          }
+          list_name{
+          }
+        }
+      }
+      // background-color: cadetblue
+    }
+  }
+}
