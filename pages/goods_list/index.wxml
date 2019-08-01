@@ -1,7 +1,18 @@
 <SearchInput></SearchInput>
-<Tabs tabs="{{tabs}}" binditemChange="handleItemChange" >
-  <block wx:if="{{tabs[0].isActive}}">综合</block>
-  <block wx:elif="{{tabs[1].isActive}}">销量</block>
-  <block wx:else="{{tabs[2].isActive}}">价格</block>
+<Tabs tabs="{{tabs}}" binditemChange="handleItemChange">
+  <block wx:if="{{tabs[0].isActive}}">
+    <view class="first_tab">
+      <view class="good_group" wx:for="{{goodsList}}" wx:key="goods_id">
+        <view class="goods_left">
+          <image mode="widthFix" src="{{item.goods_small_logo || 'http://img5.imgtn.bdimg.com/it/u=1431153029,1089302586&fm=26&gp=0.jpg'}}" />
+        </view>
+        <view class="goods_right">
+          <view class="goods_right_name">{{item.goods_name}}</view>
+          <view class="goods_right_price">￥{{item.goods_price}}</view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <block wx:elif="{{tabs[1].isActive}}">敬请期待！！</block>
+  <block wx:else="{{tabs[2].isActive}}">敬请期待！！</block>
 </Tabs>
-
