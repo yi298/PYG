@@ -1,2 +1,7 @@
-<!--pages/goods_list/index.wxml-->
-<text>pages/goods_list/index.wxml</text>
+<SearchInput></SearchInput>
+<Tabs tabs="{{tabs}}" binditemChange="handleItemChange" >
+  <block wx:if="{{tabs[0].isActive}}">综合</block>
+  <block wx:elif="{{tabs[1].isActive}}">销量</block>
+  <block wx:else="{{tabs[2].isActive}}">价格</block>
+</Tabs>
+
