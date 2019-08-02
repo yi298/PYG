@@ -48,7 +48,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 2,
+			"current": 3,
 			"list": [
 				{
 					"id": 0,
@@ -75,7 +75,7 @@
 					"id": 3,
 					"name": "goods_detail 商品详情页 ",
 					"pathName": "pages/goods_detail/index",
-					"query": "",
+					"query": "goods_id=43986",
 					"scene": null
 				},
 				{
