@@ -27,7 +27,6 @@ export const request = params => {
         // 关闭正在等待图标
           wx.hideLoading();
         console.log(ajaxTimes);
-        
       }
     });
   });

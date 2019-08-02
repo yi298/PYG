@@ -1,4 +1,6 @@
 import { request } from "../../request/index.js";
+import regeneratorRuntime from "../../lib/runtime/runtime";
+
 //Page Object
 Page({
   data: {
@@ -47,10 +49,10 @@ Page({
   },
 
   // 获取列表数据接口
-  getCategory() {
-    request({ url: "/categories" }).then(result => {
-      // 把接口的数据，赋值给全局变量
-      this.Cates = result;
+  async getCategory() {
+    const result = await request({ url: "/categories" });
+    // 把接口的数据，赋值给全局变量
+    this.Cates = result;
       // 把数据存入缓存
       wx.setStorageSync("cates", { time: Date.now(), data: this.Cates });
       // 获取左侧菜单数据
@@ -64,7 +66,6 @@ Page({
         leftList,
         rightList
       });
-    });
   },
 
   // 左侧菜单点击事件
