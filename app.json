@@ -14,7 +14,7 @@
     "pages/pay/index"
   ],
   "window": {
-    "backgroundTextStyle": "light",
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#eb4450",
     "navigationBarTitleText": "HM优购",
     "navigationBarTextStyle": "white"
