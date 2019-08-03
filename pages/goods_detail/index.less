@@ -1,0 +1,90 @@
+// 轮播图
+.detail_swiper {
+  swiper {
+    text-align: center;
+    height: 57vw;
+    swiper-item {
+      image {
+        width: 50%;
+      }
+    }
+  }
+}
+
+// 商品价格
+.goods_price {
+  padding: 10rpx 20rpx;
+  color: var(--themeColor);
+  font-weight: 600;
+}
+
+// 商品名称
+.goods_name_wrap {
+  display: flex;
+  font-size: 30rpx;
+  color: #4d4c4c;
+  border-bottom: 10px solid #eeeeee;
+  padding: 5rpx 0;
+  .goods_name {
+    flex: 4;
+    display: -webkit-box;
+    padding: 0 10rpx;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp:2; 
+  }
+  .goods_name_icon {
+    flex: 1;
+    border-left: 1px solid #4d4c4c;
+    text-align: center;
+  }
+}
+
+// 图文详情
+.goods_detail {
+  .title {
+    padding: 10rpx 20rpx;
+    color: var(--themeColor);
+    font-weight: 600;
+  }
+  .content {
+    padding: 8rpx;
+  }
+}
+
+// 底部工具栏
+.bottom_tool{
+  display: flex;
+  height: 90rpx;
+  width: 100%;
+  border-top: 1px solid #eeeeee;
+  background-color: #fff;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  .tool_item{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    button{
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
+  }
+  .car,.buy{
+    flex:2;
+    font-weight: 600;
+    color: #fff;
+  }
+  .car{
+    background-color: #ffa500;
+  }
+  .buy{
+    background-color: #eb4450;
+  }
+}
