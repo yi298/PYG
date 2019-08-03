@@ -1,12 +1,14 @@
 import { request } from "../../request/index.js";
 import regeneratorRuntime from "../../lib/runtime/runtime";
+import { getStorageCate, setStorageCate } from "../../utils/storage.js";
 
 //Page Object
 Page({
   data: {
     leftList: [],
     rightList: [],
-    currentIndex: 0
+    currentIndex: 0,
+    scrollTop: 0
   },
 
   // 接口的返回值  数组格式
@@ -20,7 +22,8 @@ Page({
     console.log(zzz); // 打印出取到的值*/
 
     // 1、拿到缓存中的数据
-    const cates = wx.getStorageSync("cates");
+    // const cates = wx.getStorageSync("cates");
+    const cates = getStorageCate();
     // 2、判断有没有缓存数据
     if (!cates) {
       this.getCategory(); // 如果没有数据，发送请求
@@ -54,7 +57,8 @@ Page({
     // 把接口的数据，赋值给全局变量
     this.Cates = result;
       // 把数据存入缓存
-      wx.setStorageSync("cates", { time: Date.now(), data: this.Cates });
+      // wx.setStorageSync("cates", { time: Date.now(), data: this.Cates });
+      setStorageCate({time: Date.now(), data: this.Cates})
       // 获取左侧菜单数据
       const leftList = this.Cates.map(v => ({
         cat_id: v.cat_id,

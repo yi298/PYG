@@ -1,5 +1,6 @@
 import { request } from "../../request/index.js";
 import regeneratorRuntime from "../../lib/runtime/runtime";
+import { getStorageCart, setStorageCart } from "../../utils/storage.js";
 
 Page({
   data: {
@@ -44,7 +45,8 @@ Page({
   handleCartAdd() {
     console.count("用户购买的次数");
     // 1 获取本地存储中的购物车对象
-    let cart = wx.getStorageSync("cart") || {};
+    // let cart = wx.getStorageSync("cart") || {};
+    let cart = getStorageCart() || {};
     // 2 判断当前商品是否已经加入购买过
     if (cart[this.GoodsObj.goods_id]) {
       // 已经加入过，则数量加一
@@ -55,7 +57,8 @@ Page({
       cart[this.GoodsObj.goods_id].num = 1;
     }
     // 3 把数据存入本地存储
-    wx.setStorageSync("cart", cart);
+    // wx.setStorageSync("cart", cart);
+    setStorageCart(cart)
     // 4 弹框提示
     wx.showToast({
       title: "购买成功",
