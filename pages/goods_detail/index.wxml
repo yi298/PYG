@@ -1,27 +1,8 @@
-<!-- 底部工具栏 -->
-<view class="bottom_tool">
-  <view class="tool_item">
-    <text class="iconfont iconkefu"></text>
-    <view class="tool_name">客服</view>
-    <button open-type="share"></button>
-  </view>
-  <view class="tool_item">
-    <text class="iconfont iconfenxiang"></text>
-    <view class="tool_name">分享</view>
-    <button open-type="share"></button>
-  </view>
-  <navigator class="tool_item">
-    <text class="iconfont icongouwuche"></text>
-    <view class="tool_name">购物车</view>
-  </navigator>
-  <view class="tool_item car">加入购物车</view>
-  <view class="tool_item buy">立即购买</view>
-</view>
-
 <!-- 轮播图 -->
 <view class="detail_swiper">
   <swiper autoplay circular indicator-dots>
-    <swiper-item wx:for="{{goodsInfo.pics}}" wx:key="pics_id">
+    <swiper-item wx:for="{{goodsInfo.pics}}" wx:key="pics_id" bindtap="handlePreviewImage"
+    data-index="{{index}}">
       <image mode="widthFix" src="{{item.pics_mid}}" />
     </swiper-item>
   </swiper>
@@ -42,4 +23,24 @@
   <view class="content">
     <rich-text nodes="{{goodsInfo.goods_introduce}}"></rich-text>
   </view>
+</view>
+
+<!-- 底部工具栏 -->
+<view class="bottom_tool">
+  <view class="tool_item">
+    <text class="iconfont iconkefu"></text>
+    <view class="tool_name">客服</view>
+    <button open-type="share"></button>
+  </view>
+  <view class="tool_item">
+    <text class="iconfont iconfenxiang"></text>
+    <view class="tool_name">分享</view>
+    <button open-type="share"></button>
+  </view>
+  <navigator class="tool_item">
+    <text class="iconfont icongouwuche"></text>
+    <view class="tool_name">购物车</view>
+  </navigator>
+  <view class="tool_item car">加入购物车</view>
+  <view class="tool_item buy">立即购买</view>
 </view>
