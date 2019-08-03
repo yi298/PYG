@@ -30,17 +30,17 @@
   <view class="tool_item">
     <text class="iconfont iconkefu"></text>
     <view class="tool_name">客服</view>
-    <button open-type="share"></button>
+    <button open-type="contact"></button>
   </view>
   <view class="tool_item">
     <text class="iconfont iconfenxiang"></text>
     <view class="tool_name">分享</view>
     <button open-type="share"></button>
   </view>
-  <navigator class="tool_item">
+  <navigator class="tool_item" open-type="switchTab" url="/pages/cart/index">  <!-- 跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面 -->
     <text class="iconfont icongouwuche"></text>
     <view class="tool_name">购物车</view>
   </navigator>
-  <view class="tool_item car">加入购物车</view>
+  <view class="tool_item car" bindtap="handleCartAdd">加入购物车</view>
   <view class="tool_item buy">立即购买</view>
 </view>
