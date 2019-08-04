@@ -1,6 +1,51 @@
 <view class="revice_wrap">
+  <!-- 添加收货地址 -->
   <view wx:if="{{!(address&&address.all)}}" class="revice_btn_wrap">
-    <button bindtap="handleChooseAddress" plain type="primary">添加收货地址</button>
+    <button bindtap="handleChooseAddress">+添加收货地址</button>
   </view>
   <view wx:else>{{address.all}}</view>
+  <!-- 添加收货地址 结束 -->
+</view>
+<!-- 加入购物车的商品 -->
+<view class="cart_main">
+  <view class="cart_main_title">优购生活馆</view>
+  <view class="cart_main_content">
+    <view class="cart_item">
+      <!-- 复选框 -->
+      <view class="cart_chk_wrap">
+        <checkbox-group>
+          <checkbox></checkbox>
+        </checkbox-group>
+      </view>
+      <!-- 商品图片 -->
+      <view class="cart_img_wrap">
+        <image mode="widthFix" src="http://image2.suning.cn/uimg/b2c/newcatentries/0000000000-000000010036750375_1_400x400.jpg"></image>
+      </view>
+      <!-- 商品信息 -->
+      <view class="cart_info">
+        <view class="goods_name">海信(Hisense)LED55MU9600X3DUC 55英寸 4K超高清量子点电视 ULED画质 VIDAA系统</view>
+        <view class="cart_price_warp">
+          <view class="goods_price">￥9988</view>
+          <view class="cart_tool">
+            <view class="cart_num_edit">-</view>
+            <view class="cart_num">1</view>
+            <view class="cart_num_edit">+</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 加入购物车的商品 结束 -->
+<view class="btm_tool">
+  <view class="all_check_warp">
+    <checkbox-group>
+      <checkbox>全选</checkbox>
+    </checkbox-group>
+  </view>
+  <view class="total_price_wrap">
+    <view class="sum_price">合计<text>￥ 298</text></view>
+    <view class="freight_tips">包含运费</view>
+  </view>
+  <view class="cart_pay">结算(10)</view>
 </view>

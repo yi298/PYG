@@ -1,6 +1,113 @@
 .revice_wrap .revice_btn_wrap {
+  border-bottom: 10rpx solid #eb4450;
   padding: 20rpx 0;
 }
 .revice_wrap .revice_btn_wrap button {
+  font-size: 34rpx;
+  padding: 10rpx 0;
   width: 50%;
+}
+.cart_main {
+  margin: 1 0 0 0;
+  border-bottom: 1px solid #eeeeee;
+}
+.cart_main .cart_main_title {
+  font-size: 36rpx;
+  padding: 20rpx 10rpx;
+  border-bottom: 1px solid #eeeeee;
+}
+.cart_main .cart_main_content .cart_item {
+  display: flex;
+  padding: 15rpx 15rpx;
+  justify-content: center;
+  align-items: center;
+}
+.cart_main .cart_main_content .cart_item .cart_chk_wrap {
+  flex: 1;
+}
+.cart_main .cart_main_content .cart_item .cart_img_wrap {
+  flex: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart_main .cart_main_content .cart_item .cart_img_wrap image {
+  width: 80%;
+}
+.cart_main .cart_main_content .cart_item .cart_info {
+  height: 176rpx;
+  flex: 6;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.cart_main .cart_main_content .cart_item .cart_info .goods_name {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.cart_main .cart_main_content .cart_item .cart_info .cart_price_warp {
+  display: flex;
+  justify-content: space-between;
+}
+.cart_main .cart_main_content .cart_item .cart_info .cart_price_warp .goods_price {
+  color: var(--themeColor);
+  font-size: 32rpx;
+  font-weight: 600;
+}
+.cart_main .cart_main_content .cart_item .cart_info .cart_price_warp .cart_tool {
+  display: flex;
+  font-weight: 600;
+}
+.cart_main .cart_main_content .cart_item .cart_info .cart_price_warp .cart_tool .cart_num_edit {
+  width: 50rpx;
+  height: 50rpx;
+  border: 1rpx solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart_main .cart_main_content .cart_item .cart_info .cart_price_warp .cart_tool .cart_num {
+  width: 50rpx;
+  height: 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btm_tool {
+  border-top: 1px solid #eeeeee;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  height: 90rpx;
+  width: 100%;
+}
+.btm_tool .all_check_warp {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btm_tool .total_price_wrap {
+  flex: 5;
+  text-align: right;
+  padding: 10rpx 20rpx 0 0;
+}
+.btm_tool .total_price_wrap .sum_price text {
+  color: var(--themeColor);
+  font-weight: 600;
+}
+.btm_tool .total_price_wrap .freight_tips {
+  font-size: 24rpx;
+}
+.btm_tool .cart_pay {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--themeColor);
+  color: #fff;
+  font-size: 30rpx;
 }
