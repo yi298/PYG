@@ -8,6 +8,7 @@
   width: 50%;
 }
 .cart_main {
+  border-top: 10rpx solid #eb4450;
   margin: 1 0 0 0;
   border-bottom: 1px solid #eeeeee;
 }
