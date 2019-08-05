@@ -6,7 +6,11 @@ import { getStorageCart,setStorageCart,getStorageAddress,setStorageAddress } fro
 Page({
   data: {
     address: {}, //添加的数据
-    cart: {} //购物车数据
+    cart: {}, //购物车数据
+    isAllChecked: false, 
+    totalPrice: 0,
+    totalNum: 0,
+    hasGoods:false
   },
 
   onLoad: function(options) {},
@@ -15,7 +19,7 @@ Page({
     const address = getStorageAddress() || {};
     const cart = getStorageCart() || {};
     this.setData({ address, cart });
-    // this.setData(cart);
+    this.setCart(cart);
   },
 
   // 添加添加收货地址
@@ -38,5 +42,39 @@ Page({
       result2.countyName +
       result2.detailInfo;
       setStorageAddress(result2)
+  },
+
+  // 商品复选框事件
+  handleCartCheck(e) {
+    console.log(e,"商品复选框事件");
+    const { id } = e.currentTarget.dataset;//根据id获取数据
+    let { cart } = this.data;
+    cart[id].checked = !cart[id].checked; // 选中取反
+    this.setCart(cart); // 重新计算，全选状态
+  },
+
+  // 根据cart对象来计算总价格
+  setCart(cart) {
+    let cartArr = Object.values(cart); // 把的对象中的值 提取出来 变成一个数组 
+    // 1 计算全选
+    let isAllChecked = true;
+    // 2 计算要购买的总数量
+    let totalNum = 0;
+    // 3 计算总价格
+    let totalPrice = 0;
+    cartArr.forEach(v => {
+      if (v.checked) {
+        totalPrice += v.num * v.goods_price;
+        totalNum += v.num;
+      } else {
+        isAllChecked = false;
+      }
+    });
+    // 判断购物车中有没有数据
+    isAllChecked = cartArr.length === 0 ? false : isAllChecked;
+    // 判断购物车中有没有商品
+    const hasGoods = cartArr.length ? true : false;
+    this.setData({ cart, isAllChecked, totalPrice, totalNum, hasGoods });
+    setStorageCart(cart);
   }
 });
