@@ -44,7 +44,7 @@
 <!-- 加入购物车的商品 结束 -->
 <view class="btm_tool">
   <view class="all_check_warp">
-    <checkbox-group>
+    <checkbox-group bindchange="handleCartAllCheck">
       <checkbox checked="{{isAllChecked}}">全选</checkbox>
     </checkbox-group>
   </view>

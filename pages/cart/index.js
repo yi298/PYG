@@ -53,6 +53,24 @@ Page({
     this.setCart(cart); // 重新计算，全选状态
   },
 
+  // 全选功能
+  handleCartAllCheck(e) {
+    console.log(e,'全选');
+    // 获取data的数据
+    let { isAllChecked, cart } = this.data;
+    // 给全选按钮取反
+    isAllChecked = !isAllChecked;
+    // 对购物车对象循环，修改每一个购物车对象，把选中状态改为isAllChecked
+    for (const key in cart) {
+      // 判断该属性是不是对象自己
+      if (cart.hasOwnProperty(key)) {
+        cart[key].checked = isAllChecked;
+      }
+    }
+    // 把cart传入到setCart函数
+    this.setCart(cart)
+  },
+
   // 根据cart对象来计算总价格
   setCart(cart) {
     let cartArr = Object.values(cart); // 把的对象中的值 提取出来 变成一个数组 
